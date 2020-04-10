@@ -5,9 +5,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { DisqusModule } from "ngx-disqus";
 
 @NgModule({
   imports: [
+    DisqusModule,    
     IonicModule,
     CommonModule,
     FormsModule,

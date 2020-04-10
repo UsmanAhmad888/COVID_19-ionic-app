@@ -1,17 +1,93 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+     <ion-title  style="font-size:110%;color:#ea5569">
+         Covid-19
+     </ion-title>
   </ion-toolbar>
-</ion-header>
+ </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen  padding>
+  <ion-card>
+    
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+       <img src="/assets/1.png">
+      </ion-slide>
+      <ion-slide>
+        <img src="/assets/3.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="/assets/2.jpg">
+      </ion-slide>
+    </ion-slides>
+    <!-- <ion-card-header>
+      <ion-card-subtitle>Destination</ion-card-subtitle>
+      <ion-card-title>Madison, WI</ion-card-title>
+    </ion-card-header> -->
+    <ion-card-content>
+      
+    </ion-card-content>
+  </ion-card>
+  <!-- {{data && data | json}} -->
+  <div >
+    <contry-details [data]="data"></contry-details>
+  <!-- <ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Total Cases</strong></h5>
+    {{data && data.total_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Recovery Cases</strong></h5>
+    {{data && data.recovery_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Death Cases</strong></h5>
+    {{data && data.death_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Currently Infected Cases</strong></h5>
+    {{data && data.currently_infected}}
+  </div>
+</ion-card-content>
+</ion-card>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Cases With Outcome</strong></h5>
+    {{data && data.cases_with_outcome}}
+  </div>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Mild Condition Cases</strong></h5>
+    {{data && data.mild_condition_active_cases}}
+  </div>
+</ion-card-content>
+</ion-card>-->
+</div> 
+
 </ion-content>

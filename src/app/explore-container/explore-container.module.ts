@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ExploreContainerComponent } from './explore-container.component';
+import { ContryDetailsComponent } from './contry-details/contry-details.component';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule],
-  declarations: [ExploreContainerComponent],
-  exports: [ExploreContainerComponent]
+  declarations: [ ContryDetailsComponent],
+  exports: [ContryDetailsComponent]
 })
 export class ExploreContainerComponentModule {}

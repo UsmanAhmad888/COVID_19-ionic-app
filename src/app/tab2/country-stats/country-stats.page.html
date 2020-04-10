@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-size:110%;color:#ea5569">Country Stats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- <app-graph></app-graph> -->
+<canvas #barChart></canvas>
+<br>
+<ion-card *ngIf="countryStore && countryStore.selectedCountryData">
+  <ion-card-content>
+  <img style="width:25px;height:20px" src="{{countryStore.selectedCountryData.flag}}">
+
+  <ion-label style="padding-left: 10px;
+  font-size: 24px;
+  font-weight: bold;">{{countryStore.selectedCountryData.country}}
+  </ion-label>
+  <!-- <ion-row > -->
+  
+ 
+    <div style=" display: flex; margin-bottom: 8px; margin-top: 8px;
+    justify-content: space-between;
+    align-items: center;
+    ">
+      <h6>Total Cases</h6>
+      <span >{{countryStore.selectedCountryData.total_cases}}</span>
+    </div >
+    <div style=" display: flex; margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+    ">
+      <h6>New Cases</h6>
+      <span >{{countryStore.selectedCountryData.new_cases}}</span>
+    </div >
+    <div style=" display: flex; margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+     color:red"> 
+      <h6>Total Deaths</h6>
+      <span >{{countryStore.selectedCountryData.total_deaths}}</span>
+    </div >
+    <div style=" display: flex; margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+    ">
+      <h6>Total Recovered</h6>
+      <span >
+      {{countryStore.selectedCountryData.total_recovered}}</span>
+    </div >
+    <!-- <ion-row > -->
+    <div style=" display: flex; margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+    ">
+      <h6>Active Cases</h6>
+      <span >
+      {{countryStore.selectedCountryData.active_cases}}</span>
+    </div >
+    
+  <div style=" display: flex; margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+    ">
+    <h6>Serious Cases</h6>
+    <span >
+    {{countryStore.selectedCountryData.serious_critical}}</span>
+  </div >
+  <div style=" display: flex; margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+     color:red"> 
+    <h6>New Deaths</h6>
+    <span >
+    {{countryStore.selectedCountryData.new_deaths}}</span>
+  </div >
+</ion-card-content>
+</ion-card>
+
+
+</ion-content>

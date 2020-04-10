@@ -1,0 +1,100 @@
+<div style="display: flex; justify-content: space-between;">
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Total Cases</strong></h5>
+    {{data && data.total_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Recovery Cases</strong></h5>
+    {{data && data.recovery_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <ion-card class="data-card">
+  <ion-card-content>
+  <div style="color:red">
+    <h5> <strong>Death Cases</strong></h5>
+    {{data && data.death_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Currently Infected Cases</strong></h5>
+    {{data && data.currently_infected}}
+  </div>
+</ion-card-content>
+</ion-card>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Cases With Outcome</strong></h5>
+    {{data && data.cases_with_outcome}}
+  </div>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Mild Condition Cases</strong></h5>
+    {{data && data.mild_condition_active_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+  <ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Critical Active Cases</strong></h5>
+    {{data && data.critical_condition_active_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Recovered Closed Cases</strong></h5>
+    {{data && data.recovered_closed_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+</div>
+
+
+<div style="display: flex; justify-content: space-between;">
+  <ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Death Closed Cases</strong></h5>
+    {{data && data.death_closed_cases}}
+  </div>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="data-card">
+  <ion-card-content>
+  <div>
+    <h5> <strong>Genral Death Rate</strong></h5>
+    {{data && data.general_death_rate}}
+  </div>
+</ion-card-content>
+</ion-card>
+</div>

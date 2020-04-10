@@ -1,17 +1,75 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+     <ion-title  style="font-size:110%;color:#ea5569">
+         Covid-19
+     </ion-title>
+   <ion-buttons slot="end">
+     <ion-button style="color:#ea5569" icon-only (click)="refresh()" >
+       <ion-icon name="refresh"></ion-icon>
+     </ion-button>
+   </ion-buttons>
   </ion-toolbar>
-</ion-header>
+ </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen  padding>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<div>
+  <form>
+  <ion-item>
+    <ion-searchbar animated placeholder="Search By Country Name" (change)="search()" name="search1" [(ngModel)]="countryNameToSearch"></ion-searchbar>
+  </ion-item>
+  </form>
+</div>
+  <ion-grid >
+    <ion-card *ngFor="let data of covidData &&  covidData.data && covidData.data.rows" (click)="navigateToDetails(data)">
+  <ion-card-content>
+    <span>
+      <img style="width:20px;height:20px" src="{{data.flag}}">
+    <ion-label style="padding-left: 10px;
+    font-size: 24px;
+    font-weight: bold;color:#ea5569" >{{data.country}}
+    </ion-label>
+    <span style="float:right;color:#ea5569 ">Show Details</span>
+  </span>
+    <ion-row >
+      <ion-col>
+        <h6>Total Cases</h6>
+        <span class="data">{{data.total_cases}}</span>
+      </ion-col>
+      <ion-col>
+        <h6>New Cases</h6>
+        <span class="data">{{data.new_cases}}</span>
+      </ion-col>
+      <ion-col style="color:red">
+        <h6>Total Deaths</h6>
+        <span class="data">{{data.total_deaths}}</span>
+      </ion-col>
+      <ion-col>
+        <h6>Total Recovered</h6>
+        <span class="data">
+        {{data.total_recovered}}</span>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+  </ion-card>
+  </ion-grid>
+  <div >
+    <ion-item>
+    <ion-label>
+      <ion-skeleton-text animated style="width: 100%"  slot="start"></ion-skeleton-text>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <ion-skeleton-text animated style="width: 100%"  slot="start"></ion-skeleton-text>
+    </ion-label>
+  </ion-item></div>
+  
+  
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

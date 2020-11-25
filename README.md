@@ -1,4 +1,4 @@
-# OCVID_19-ionic-app
+# COVID_19-ionic-app
 
 * Run these command to run this project *
  1. npm i 
